@@ -124,12 +124,47 @@ const dictionary = {
     ],
 };
 
+
+/* 
+
+object = { 
+  title
+  pages
+  author
+  }
+
+*/
 function booksByAuthor(dictionary) {
   // Your code here:
-  
+  const result = [];
+
+  const writers = Object.keys(dictionary);
+
+  writers.forEach((author) => {
+    const books = dictionary[author];
+    books.forEach((book) => {
+      const title = book[0];
+      const pages = book [1];
+       result.push({title, pages, author});
+    });
+  });
+  return result;
 }
 
-console.log(Object.keys(dictionary));
+console.log(booksByAuthor(dictionary));
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Bonus: Iteration 6 | Average Page Count
 function averagePageCount() {
